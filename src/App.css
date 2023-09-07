@@ -1,0 +1,36 @@
+.App {
+  box-sizing: border-box;
+  height: 100vh;
+  background: url('./img/cold-bg.jpg') no-repeat ;
+  font-family: 'monospace', sans-serif;  
+  
+}
+
+main{
+ 
+}
+.input{
+width: 300px;
+margin-left:10px ;
+margin-top: -10px;
+opacity: 0.5;
+padding:20px ;
+background: white;
+border-radius:  0 0 20px 20px;
+border: none;
+outline: none;
+}
+
+.shell{
+  margin-top: 70px;
+  margin-left: 20px;
+}
+
+.city{
+  margin-bottom: 10px;
+}
+
+.date{
+  margin-bottom: 10px;
+}
+
