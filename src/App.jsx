@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 
 
@@ -7,18 +7,22 @@ function App() {
   const [city, setCity] = useState('')
   const [weather , setWeather] = useState({})
 
-  const click = (e) =>{
-    if (e.key === 'Enter'){
-      
-      fetch(`https://api.api-ninjas.com/v1/weather?city=${city}`, {method: 'GET',
-      headers: { 'X-Api-Key': 'fdSjR2X6OVE3FonP8hETvg==G6agMtWsF7kll8r2'}}  )
-      .then(res=>res.json())
-      .then(result=>{
-        setWeather(result)
+
+
+  useEffect(()=>{
+    const click = (e) =>{
+      if (e.key === 'Enter'){
         
-      })
+        fetch(`https://api.api-ninjas.com/v1/weather?city=${city}`, {method: 'GET',
+        headers: { 'X-Api-Key': 'fdSjR2X6OVE3FonP8hETvg==G6agMtWsF7kll8r2'}}  )
+        .then(res=>res.json())
+        .then(result=>{
+          setWeather(result)
+          
+        })
+      }
     }
-  }
+  },[click])
   
   const dateNow =()=>{
     const days = [  'Monday','Tuesday', 'Wednesday', 'Thursday','Friday', 'Saturday', 'Sunday'] 
